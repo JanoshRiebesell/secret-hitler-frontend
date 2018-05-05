@@ -1,13 +1,21 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
+import SocketIOClient from 'socket.io-client';
 
 export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.socket = SocketIOClient('http://localhost:3000');
+  }
+
+  sendSocketRequest = () => {
+    this.socket.emit('request', 'test message')
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
+        <Button title='Send Socket Request' onPress={this.sendSocketRequest}/>
       </View>
     );
   }
