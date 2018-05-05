@@ -2,14 +2,18 @@ import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import SocketIOClient from 'socket.io-client';
 
+import { localBackendIp } from 'react-native-dotenv'
+
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.socket = SocketIOClient('http://localhost:3000');
+    // update localBackendIp in .env to connect to other machine on the LAN
+    this.ip =  localBackendIp || 'localhost';
+    this.socket = SocketIOClient(`http://${this.ip}:3000`);
   }
 
   sendSocketRequest = () => {
-    this.socket.emit('request', 'test message')
+    this.socket.emit('newGame', 'Starting new game...');
   }
 
   render() {
