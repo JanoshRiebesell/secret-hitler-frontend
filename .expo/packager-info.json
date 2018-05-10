@@ -1,5 +1,12 @@
 {
   "expoServerPort": 19000,
   "packagerPort": 19001,
+<<<<<<< HEAD
   "packagerPid": 29571
+=======
+  "packagerPid": 14828,
+  "expoServerNgrokUrl": "https://sx-c7x.dhvdiego.secret-hitler-frontend.exp.direct",
+  "packagerNgrokUrl": "https://packager.sx-c7x.dhvdiego.secret-hitler-frontend.exp.direct",
+  "ngrokPid": 6364
+>>>>>>> develop
 }
