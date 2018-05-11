@@ -23,7 +23,7 @@ class UserIntro extends Component {
 const styles = StyleSheet.create({
   parent: {
     marginTop:20,
-    backgroundColor: 'grey',
+    backgroundColor: 'white',
     flex:1,
     flexDirection: 'column',
   },
