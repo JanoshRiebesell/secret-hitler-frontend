@@ -6,13 +6,11 @@ class UserIntro extends Component {
 
   render() {
     let roleImage =
-    this.props.role === 'liberal' ? require('../assets/liberal.jpg') :
-    this.props.role === 'fascist' ? require('../assets/fascist.jpg') :
-    require('../assets/trump.jpg')
+    this.props.role === 'liberal' ? require('../assets/userIntro/liberal.png') :
+    this.props.role === 'fascist' ? require('../assets/userIntro/fascist.png') :
+    require('../assets/userIntro/hitler.png')
     return (
     <View style={styles.parent}>
-      {/* DO WE WANT ANY TEXT IN HERE??? <Text>Hello World</Text> */}
-
       <Image
         source={roleImage}
         style={styles.imageStyle}
@@ -25,7 +23,7 @@ class UserIntro extends Component {
 const styles = StyleSheet.create({
   parent: {
     marginTop:20,
-    backgroundColor: 'grey',
+    backgroundColor: 'white',
     flex:1,
     flexDirection: 'column',
   },
@@ -38,11 +36,11 @@ const styles = StyleSheet.create({
   },
 });
 
-const timeout = setTimeout(()=> console.warn('Switch to next screen'), 5000);
+const timeout = setTimeout(()=> console.warn('Switch to next screen'), 8000);
 
 const mapStateToProps = state => {
   return {
-    role: 'liberal'
+    role: 'hitler'
   }
 }
 
