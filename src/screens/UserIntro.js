@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
 import { connect } from 'react-redux'
-// import Card from '../components/Card';
-// import CardSection from '../components/CardSection';
-// import { connect } from 'react-redux';
-
 
 class UserIntro extends Component {
 
@@ -44,7 +40,7 @@ const timeout = setTimeout(()=> console.warn('Switch to next screen'), 8000);
 
 const mapStateToProps = state => {
   return {
-    role: 'liberal'
+    role: 'hitler'
   }
 }
 
