@@ -60,7 +60,6 @@ const styles = StyleSheet.create({
 
 const mapStateToProps = (state) => {
   return {
-    app: state.app,
     user: state.user,
     game: state.game,
   };

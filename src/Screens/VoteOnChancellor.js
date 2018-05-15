@@ -27,7 +27,7 @@ class VoteOnChancellor extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  game: state.gameReducer
+  game: state.game
 })
 
 const mapDispatchToProps = (dispatch) => ({

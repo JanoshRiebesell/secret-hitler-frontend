@@ -10,11 +10,22 @@ import { socketEvent } from '../../redux/actions/socket.actions'
 class MainBoard extends Component {
   constructor (props) {
     super(props);
-    this.state = {drawerOpen: null, turnCount: 0};
+    this.state = {
+      id: undefined,
+      drawerOpen: null,
+      turnCount: 0,
+      numberOfFascistPolicies: 0,
+      numberOfLiberalPolicies: 0
+    };
   };
 
   componentDidMount () {
     Expo.ScreenOrientation.allow(Expo.ScreenOrientation.Orientation.LANDSCAPE);
+    if (this.props.user) {
+      this.setState({
+        id: this.props.user.id
+      })
+    }
   }
 
   // Presentational
@@ -80,7 +91,11 @@ class MainBoard extends Component {
   // Socket actions occuring on the main Board
   static getDerivedStateFromProps(nextProps, prevState) {
     if (nextProps.turnCount > prevState.turnCount) {
-      handlePresidentChange();
+      this.handlePresidentChange();
+    } else if (nextProps.numberOfFascistPolicies > this.state.numberOfFascistPolicies) {
+      this.handleFascistPolicyChange();
+    } else if (nextProps.numberOfLiberalPolicies > this.state.numberOfLiberalPolicies) {
+      this.handleLiberalPolicyChange();
     } else {
       return prevState;
     }
@@ -93,9 +108,38 @@ class MainBoard extends Component {
     this.props.socketEvent('acknowledgePresident', {gameId: this.props.game.id})
   }
 
+  handleLiberalPolicyChange = () => {
+    this.setState({
+      numberOfLiberalPolicies: numberOfLiberalPolicies++
+    })
+    this.props.socketEvent('acknowledgeChosenPolicy', {gameId: this.props.game.id})
+  }
+
+  handleFascistPolicyChange = () => {
+    this.setState({
+      numberOfFascistPolicies: numberOfFascistPolicies++
+    })
+    this.props.socketEvent('acknowledgeChosenPolicy', {gameId: this.props.game.id})
+    this.handleNavigation()
+  }
+
+  // Special role navigation
+  handleNavigation = () => {
+    let userRole;
+    for (let i = 0; i < this.props.game.playerList.length; i++) {
+      const player = this.props.game.playerList[i];
+      if (this.state.id === player.id && player.president) {
+        userRole = 'president';
+      }
+    }
+    if (this.state.numberOfFascistPolicies >= 4 ) {
+      this.props.navigation.navigate('ExecutionScreen')
+    }
+  }
+
 
   render() {
-    console.log('PROOOOOOOOOOPS', this.props)
+    console.log('AAAAAAAAAAA', this.props.user)
     return (
       <Drawer
         open={this.state.drawerOpen}
@@ -166,7 +210,7 @@ const styles = StyleSheet.create({
 })
 
 const mapStateToProps = (state) => ({
-  game: state.gameReducer
+  game: state.game
 })
 
 const mapDispatchToProps = (dispatch) => ({

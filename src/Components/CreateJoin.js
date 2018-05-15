@@ -13,7 +13,7 @@ class CreateJoin extends Component {
 
   onCreateClick = () => {
     this.props.createGame()
-    //this.props.navigation.navigate('Create');
+    this.props.navigation.navigate('Create');
   }
 
   onJoinClick = () => {
@@ -54,8 +54,8 @@ class CreateJoin extends Component {
   }
 }
 
-const mapStateToProps = ({ userReducer }) => {
-  const { avatar, id, name } = userReducer;
+const mapStateToProps = ({ user }) => {
+  const { avatar, id, name } = user;
   return {
     avatar, id, name
   }
@@ -69,4 +69,3 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CreateJoin);
-

@@ -104,8 +104,8 @@ const styles = {
   }
 }
 
-const mapStateToProps = ({ userReducer }) => {
-  const { avatar, id, name } = userReducer;
+const mapStateToProps = ({ user }) => {
+  const { avatar, id, name } = user;
   return {
     avatar, id, name
   }

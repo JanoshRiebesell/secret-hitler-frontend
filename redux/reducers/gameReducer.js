@@ -5,9 +5,9 @@ const game = {
   id: undefined,
   gameState: {
     electionFailCount: 0,
-    numberOfFascistPolicies: 0,
+    numberOfFascistPolicies: 2,
     numberOfFascists: 0,
-    numberOfLiberalPolicies: 0,
+    numberOfLiberalPolicies: 3,
     numberOfLiberals: 0,
     turnCount: 0,
     vetoPowerUnlocked: false,
@@ -20,9 +20,10 @@ const game = {
   },
   playerList: [
     {
-      id: undefined,
-      chancellor: false,
+      id: 'AHAHAHAHAA',
+      chancellor: true,
       executed: false,
+      faction: 'liberal',
       hitler: false,
       president: false,
       user: {

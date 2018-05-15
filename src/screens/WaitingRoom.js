@@ -56,6 +56,7 @@ class WaitingRoom extends Component {
 
   startGame = () => {
     this.props.socketEvent('startGame', {gameId: this.props.game.id})
+    this.props.navigation.navigate('MainBoard');
   }
 
   renderButton = () => {
@@ -157,8 +158,8 @@ const styles = StyleSheet.create({
 });
 
 const mapStateToProps = (state) => ({
-  game: state.gameReducer,
-  players: state.gameReducer.playerList
+  game: state.game,
+  players: state.game.playerList
 })
 
 const mapDispatchToProps = (dispatch) => ({

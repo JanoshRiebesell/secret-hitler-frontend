@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
 });
 
 const mapStateToProps = (state) => ({
-  game: state.gameReducer.gameState
+  game: state.game.gameState
 })
 
 export default connect(mapStateToProps, null)(ElectionTracker);

@@ -8,17 +8,16 @@ import CreateRoom from './src/Components/CreateRoom';
 import JoinRoom from './src/Components/JoinRoom';
 import CreateJoin from './src/Components/CreateJoin';
 import CreateUser from './src/Components/CreateUser';
-import JaNeinVote from './src/Components/JaNeinVote';
 import UserIntro from './src/Screens/UserIntro';
 import MainBoard from './src/Screens/mainBoard';
 import { createBottomTabNavigator } from 'react-navigation';
 import reducers from './redux/reducers';
 import WaitingRoom from './src/Screens/WaitingRoom';
-import JaNeinVote from './src/Components/JaNeinVote';
+import JaNeinVote from './src/Screens/JaNeinVote';
+import ShowChancellor from './src/Screens/ShowChancellor';
+import ShowPresident from './src/Screens/ShowPresident';
+
 import PresidentVeto from './src/Components/PresidentVetoChoice';
-
-
-
 
 export default class App extends React.Component {
 
@@ -26,6 +25,12 @@ export default class App extends React.Component {
     const MainNavigator = createBottomTabNavigator({
       Login: { screen: CreateUser },
       CreateJoin: { screen: CreateJoin },
+      UserIntro: { screen: UserIntro },
+      JaNeinVote: {screen: JaNeinVote},
+      MainBoard : { screen: MainBoard },
+      WaitingRoom: { screen: WaitingRoom},
+      ShowChancellor: { screen: ShowChancellor},
+      ShowPresident: { screen: ShowPresident},
       CreateOrJoin: {
         screen: createBottomTabNavigator({
           Create: { screen: CreateRoom },
@@ -33,10 +38,7 @@ export default class App extends React.Component {
           Waiting: { screen: WaitingRoom },
           UserIntro: { screen: UserIntro },
           MainBoard : { screen: MainBoard },
-          VoteOnChancellor : { screen: VoteOnChancellor },
         },
-      JaNeinVote: {screen: JaNeinVote},
-      MainBoard : { screen: MainBoard },
         {
           navigationOptions: {
             tabBarVisible: false

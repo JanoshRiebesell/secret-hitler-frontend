@@ -7,10 +7,10 @@ import playerListReducer from './playerListReducer';
 
 
 const reducers = combineReducers({
-  socketReducer,
-  userReducer,
-  gameReducer,
-  playerListReducer,
+  socket: socketReducer,
+  user: userReducer,
+  game: gameReducer,
+  // playerListReducer,
 });
 
 export default reducers;

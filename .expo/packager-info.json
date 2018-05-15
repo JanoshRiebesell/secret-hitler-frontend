@@ -1,7 +1,7 @@
 {
-  "expoServerPort": 19000,
-  "packagerPort": 19002,
-  "packagerPid": 26915,
+  "expoServerPort": null,
+  "packagerPort": null,
+  "packagerPid": null,
   "expoServerNgrokUrl": "https://sx-c7x.dhvdiego.secret-hitler-frontend.exp.direct",
   "packagerNgrokUrl": "https://packager.sx-c7x.dhvdiego.secret-hitler-frontend.exp.direct",
   "ngrokPid": 6364

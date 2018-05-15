@@ -8,7 +8,7 @@ import {
 
 const user = {
   avatar: undefined,
-  id: undefined,
+  id: 'AHAHAHAHAA',
   name: undefined,
 }
 
