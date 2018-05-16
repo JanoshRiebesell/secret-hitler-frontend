@@ -11,11 +11,16 @@ import CreateUser from './src/Components/CreateUser';
 import UserIntro from './src/Screens/UserIntro';
 import MainBoard from './src/Screens/mainBoard';
 import { createBottomTabNavigator } from 'react-navigation';
+import { createDrawerNavigator } from 'react-navigation';
+
 import reducers from './redux/reducers';
 import WaitingRoom from './src/Screens/WaitingRoom';
 import JaNeinVote from './src/Screens/JaNeinVote';
 import ShowChancellor from './src/Screens/ShowChancellor';
 import ShowPresident from './src/Screens/ShowPresident';
+import Notification from './src/Components/notification';
+import NotificationsBoard from './src/Screens/boardWithNotifications';
+
 
 import PresidentVeto from './src/Components/PresidentVetoChoice';
 
@@ -31,6 +36,16 @@ export default class App extends React.Component {
       WaitingRoom: { screen: WaitingRoom},
       ShowChancellor: { screen: ShowChancellor},
       ShowPresident: { screen: ShowPresident},
+      // MainBoard: {
+      //   screen: createDrawerNavigator({
+      //     NotificationsBoard: {
+      //       screen: NotificationsBoard,
+      //     },
+      //     Notifications: {
+      //       screen: Notification,
+      //     },
+      //   }),
+      // },
       CreateOrJoin: {
         screen: createBottomTabNavigator({
           Create: { screen: CreateRoom },

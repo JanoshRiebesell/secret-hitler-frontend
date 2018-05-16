@@ -8,14 +8,26 @@ class Notification extends Component {
     super(props)
   }
 
+  static navigationOptions = {
+    drawerLabel: 'Notifications',
+    drawerIcon: ({ tintColor }) => (
+      <Image
+        source={require('../assets/trump.jpg')}
+        style={[styles.icon, {tintColor: tintColor}]}
+      />
+    ),
+  };
+
   render() {
     return (
-      <View style={styles.notification}>
-        <Text> HELLO </Text>
-      </View>
-    )
+      <Button
+        onPress={() => this.props.navigation.goBack()}
+        title="Go back to board"
+      />
+    );
   }
 }
+
 
 const styles = StyleSheet.create({
   notification: {
@@ -23,11 +35,15 @@ const styles = StyleSheet.create({
     width: '100%',
     opacity: 0.6,
   },
+  icon: {
+    width: 24,
+    height: 24,
+  }
 })
 
 
 const mapStateToProps = (state) => ({
-  game: state.gameReducer,
+  game: state.game,
 })
 
 const mapDispatchToProps = (dispatch) => ({

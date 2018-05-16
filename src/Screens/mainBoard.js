@@ -23,7 +23,9 @@ class MainBoard extends Component {
     Expo.ScreenOrientation.allow(Expo.ScreenOrientation.Orientation.LANDSCAPE);
     if (this.props.user) {
       this.setState({
-        id: this.props.user.id
+        id: this.props.user.id,
+        numberOfFascistPolicies: this.props.game.gameState.numberOfFascistPolicies,
+        numberOfLiberalPolicies: this.props.game.gameState.numberOfLiberalPolicies
       })
     }
   }
@@ -92,9 +94,9 @@ class MainBoard extends Component {
   static getDerivedStateFromProps(nextProps, prevState) {
     if (nextProps.turnCount > prevState.turnCount) {
       this.handlePresidentChange();
-    } else if (nextProps.numberOfFascistPolicies > this.state.numberOfFascistPolicies) {
+    } else if (nextProps.numberOfFascistPolicies > prevState.numberOfFascistPolicies) {
       this.handleFascistPolicyChange();
-    } else if (nextProps.numberOfLiberalPolicies > this.state.numberOfLiberalPolicies) {
+    } else if (nextProps.numberOfLiberalPolicies > prevState.numberOfLiberalPolicies) {
       this.handleLiberalPolicyChange();
     } else {
       return prevState;
@@ -123,6 +125,19 @@ class MainBoard extends Component {
     this.handleNavigation()
   }
 
+  // Showing special role drawers
+
+
+
+
+
+
+
+
+
+
+
+
   // Special role navigation
   handleNavigation = () => {
     let userRole;
@@ -138,8 +153,9 @@ class MainBoard extends Component {
   }
 
 
+
   render() {
-    console.log('AAAAAAAAAAA', this.props.user)
+
     return (
       <Drawer
         open={this.state.drawerOpen}
