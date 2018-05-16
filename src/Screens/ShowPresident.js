@@ -55,8 +55,9 @@ class ShowPresident extends Component {
   render () {
     return (
       <View>
-        {this.revealChancellor()}
+        {this.revealPresident()}
       <Button
+        navigation={this.props.navigation}
         title="Ready to vote!"
         onPress={this.handleClick}
       />
@@ -75,4 +76,4 @@ const mapDispatchToProps = (dispatch) => ({
   socketEvent: (message, payload) => dispatch(socketEvent(message, payload)),
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(ShowChancellor);
+export default connect(mapStateToProps, mapDispatchToProps)(ShowPresident);

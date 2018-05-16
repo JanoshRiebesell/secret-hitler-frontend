@@ -56,7 +56,7 @@ export default class App extends React.Component {
 
     return (
       <Provider store={createStore(reducers, applyMiddleware(logger, socket('http://localhost:3000')))}>
-        <MainNavigator />
+        <MainNavigator/>
       </Provider>
       );
     }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Image, ImageBackground, Button} from 'react-native';
 import { connect } from 'react-redux';
+import { withNavigation } from 'react-navigation';
 import { socketEvent} from '../../redux/actions/socket.actions';
 import MainBoard from '../Screens/mainBoard'
 

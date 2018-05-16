@@ -6,7 +6,7 @@ import Board from '../Components/board';
 import Drawer from 'react-native-drawer';
 import Notification from '../Components/notification';
 import { socketEvent } from '../../redux/actions/socket.actions';
-import JaNeinVote from '../Screens/JaNeinVote';
+import JaNeinVote from './JaNeinVote';
 
 class ShowChancellor extends Component {
   constructor (props) {

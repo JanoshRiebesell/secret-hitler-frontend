@@ -3,6 +3,7 @@ import { View, Text, TouchableOpacity, StyleSheet, Image, ImageBackground, Butto
 import { StackNavigator } from 'react-navigation';
 import { connect } from 'react-redux';
 import { socketEvent } from '../../redux/actions/socket.actions';
+import MainBoard from './mainBoard';
 
 import UserIntro from './UserIntro';
 
