@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { StyleSheet, Image, View, FlatList, TouchableOpacity, Button, Text } from 'react-native';
 
-const mockList = [ 'liberal', ' fascist', 'liberal'];
+const mockList = [ 'liberal', ' fascist'];
 
 class ChancellorPolicies extends Component {
   constructor (props) {
