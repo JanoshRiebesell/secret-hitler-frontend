@@ -61,16 +61,48 @@ class ShowChancellor extends Component {
 
   render () {
     return (
-      <View>
-        {this.revealChancellor()}
-      <Button
-        title="Ready to vote!"
-        onPress={this.goToVote}
-      />
+      <View style={styles.mainBoardContainer}>
+        <ImageBackground source={require('../assets/WaitingRoom/waitingRoomBackground.png')} style={{flex:1, width:'100%', opacity: 0.6}}>
+            <View style={styles.chancellorCard}>
+              {this.revealChancellor()}
+                <Button
+                  navigation={this.props.navigation}
+                  title="Vote"
+                  onPress={this.goToVote}
+                  style={styles.button}
+                />
+            </View>
+          </ImageBackground>
       </View>
     )
   }
 }
+
+const styles = StyleSheet.create({
+  mainBoardContainer : {
+    display: 'flex',
+    height: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'white'
+  },
+
+  chancellorCard: {
+    alignSelf: 'center',
+    margin: '10%',
+  },
+
+  button: {
+    color: 'white',
+  },
+
+  text: {
+    fontSize: 42,
+    fontWeight: 'bold',
+  }
+})
+
+
 
 const mapStateToProps = (state) => ({
   game: state.game,
