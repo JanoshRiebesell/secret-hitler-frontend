@@ -25,11 +25,26 @@ class UserIntro extends Component {
           return <Image source={require('../assets/HighResSHPngs/roleHitler.png')} style={styles.imageStyle} />
         } else if (player.faction === 'liberal') {
           return <Image source={require('../assets/HighResSHPngs/roleLiberal.png')} style={styles.imageStyle} />
-        } else {
+        } else if (!player.hitler && player.faction === 'fascist'){
           return <Image source={require('../assets/HighResSHPngs/roleFascist.png')} style={styles.imageStyle} />
         }
       }
     }
+  }
+
+
+  // hard code renderRole
+  renderRoleCard = () => {
+    for (let i = 0; i < this.props.players.length; i++) {
+      const player = this.props.players[i];
+        if (this.props.players[0]) {
+          return <Image source={require('../assets/HighResSHPngs/roleHitler.png')} style={styles.imageStyle} />
+        } else if (this.props.players[1] || this.props.players[3]) {
+          return <Image source={require('../assets/HighResSHPngs/roleLiberal.png')} style={styles.imageStyle} />
+        } else if (this.props.players[2] || this.props.players[4]){
+          return <Image source={require('../assets/HighResSHPngs/roleFascist.png')} style={styles.imageStyle} />
+        }
+      }
   }
 
   render() {

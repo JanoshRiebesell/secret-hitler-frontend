@@ -34,15 +34,23 @@ class ShowPresident extends Component {
     })
   }
 
+  // revealPresident = () => {
+  //   const president= this.props.players.filter(player => {
+  //     if (player.president) {
+  //       return player;
+  //     }
+  //   })
+  //   const presidentId = president[0].user.id
+  //   const presidentName = president[0].user.name;
+  //   if (this.props.user.id === presidentId) {
+  //     return <Text style={styles.text}> Welcome to the Presidency! </Text>
+  //   } else {
+  //     return <Text style={styles.text}> {presidentName} is your President this turn. </Text>
+  //   }
+  // }
+
   revealPresident = () => {
-    const president= this.props.players.filter(player => {
-      if (player.president) {
-        return player;
-      }
-    })
-    const presidentId = president[0].user.id
-    const presidentName = president[0].user.name;
-    if (this.props.user.id === presidentId) {
+    if (this.props.players[0]) {
       return <Text style={styles.text}> Welcome to the Presidency! </Text>
     } else {
       return <Text style={styles.text}> {presidentName} is your President this turn. </Text>

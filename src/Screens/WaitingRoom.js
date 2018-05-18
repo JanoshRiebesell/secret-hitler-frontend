@@ -50,6 +50,9 @@ class WaitingRoom extends Component {
     }
   }
 
+
+
+
   renderPlayers = () => {
     let currentPlayers = [];
     if (this.props.players) {
@@ -155,7 +158,8 @@ const styles = StyleSheet.create({
 
 const mapStateToProps = (state) => ({
   game: state.game,
-  players: state.game.playerList
+  players: state.game.playerList,
+  user: state.user
 })
 
 const mapDispatchToProps = (dispatch) => ({
