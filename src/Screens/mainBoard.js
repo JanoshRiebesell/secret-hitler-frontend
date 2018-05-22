@@ -43,7 +43,6 @@ class MainBoard extends Component {
  }
 
   renderMainContent = () => {
-    console.log('IS MY STATE CHANING IN WEIRD UNPREDICTABLE WAYS????', this.state)
     if(!this.state.drawerOpen) {
       return (
         <View style={styles.mainBoardContainer}>

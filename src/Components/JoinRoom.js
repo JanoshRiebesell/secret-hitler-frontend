@@ -38,17 +38,15 @@ class JoinRoom extends Component {
             autoCorrect={false}
             onChangeText={(gameId) => this.setState({gameId})}
           />
-        </CardSection>
-        <CardSection>
+        </View>
+        <View>
           <Button onPress={this.joinGameRoom}>
             Join
           </Button>
-        </CardSection>
-          <HomeImage />
         </View>
 
         <View style={styles.containerStyle} >
-          <Button onPress={this.onJoinClick.bind(this)}>
+          <Button onPress={this.joinGameRoom}>
             Join
           </Button>
         </View>

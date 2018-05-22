@@ -22,23 +22,21 @@ class ShowChancellor extends Component {
     })
   }
 
-  getChancellorId = () => {
-    const chancellorId = this.props.players.filter(player => {
-      if (player.chancellor) {
-        return player.id;
-      }
+  getChancellor = () => {
+    const chancellor = this.props.players.filter(player => {
+      return player.chancellor
     })
+
+    const chancellorId = chancellor.id
+    const chancellorName = chancellor.user.name
     this.setState({
-      chancId: chancellorId
+      chancId: chancellorId,
+      chancName: cha
     })
   }
 
   revealChancellor = () => {
-    const chancellor = this.props.players.filter(player => {
-      if (player.chancellor) {
-        return player;
-      }
-    })
+    const chancellor = this.getChancellor();
     const chancellorId = chancellor[0].id;
     const chancellorName = chancellor[0].user.name;
 

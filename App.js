@@ -55,7 +55,7 @@ export default class App extends React.Component {
     });
 
     return (
-      <Provider store={createStore(reducers, applyMiddleware(logger, socket('http://192.168.1.165:3000')))}>
+      <Provider store={createStore(reducers, applyMiddleware(socket('Lucies-MacBook-Air.local:3000')))}>
         <MainNavigator />
       </Provider>
       );
