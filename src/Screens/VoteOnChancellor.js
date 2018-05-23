@@ -14,10 +14,8 @@ class VoteOnChancellor extends Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <View>
-        // import PlayerList component here
         <View>
           <JaNeinVote handleVote={this.props.handleVote}/>
         </View>

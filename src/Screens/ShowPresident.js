@@ -36,10 +36,9 @@ class ShowPresident extends Component {
 
   revealPresident = () => {
     const president= this.props.players.filter(player => {
-      if (player.president) {
-        return player;
-      }
+      return player.president
     })
+
     const presidentId = president[0].user.id
     const presidentName = president[0].user.name;
     if (this.props.user.id === presidentId) {

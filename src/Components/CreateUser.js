@@ -17,6 +17,7 @@ class CreateUser extends Component {
   componentDidMount() {
     Expo.ScreenOrientation.allow(Expo.ScreenOrientation.Orientation.PORTRAIT);
   }
+
   onCreateClick = async () => {
     let { avatar, id, name } = this.props;
     let idStored = await readStorage('uuid')
@@ -70,7 +71,6 @@ class CreateUser extends Component {
   }
 
   render () {
-    console.log(this.props)
     return (
         <View style={{ flex: 1, backgroundColor: '#4c140d' }} >
           <View>
@@ -101,7 +101,7 @@ class CreateUser extends Component {
 
           <View style={{ flexDirection: 'row' }} >
             <Button
-              onPress={this.onCreateClick.bind(this)}
+              onPress={this.onCreateClick}
               style={{ marginTop: 25}}
             >
               Let Me In...

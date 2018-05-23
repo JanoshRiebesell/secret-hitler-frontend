@@ -32,23 +32,48 @@ class WaitingRoom extends Component {
     this.props.navigation.navigate('UserIntro');
   }
 
+  // renderButton = () => {
+  //   if (this.props.game) {
+  //     if (this.props.players.length > 6) {
+  //       return (
+  //         <TouchableOpacity disabled={true}>
+  //           <Text style={{ fontSize: 30, color: 'black', fontWeight: 'bold', opacity: 0.5}}> START GAME </Text>
+  //         </TouchableOpacity>
+  //       )
+  //     } else {
+  //       return (
+  //         <TouchableOpacity onPress={this.startGame}>
+  //           <Text style={{ fontSize: 30, color: 'black', fontWeight: 'bold'}}> START GAME </Text>
+  //         </TouchableOpacity>
+  //       )
+  //     }
+  //   }
+  // }
+
   renderButton = () => {
     if (this.props.game) {
-      if (this.props.players.length > 6) {
-        return (
-          <TouchableOpacity disabled={true}>
-            <Text style={{ fontSize: 30, color: 'black', fontWeight: 'bold', opacity: 0.5}}> START GAME </Text>
-          </TouchableOpacity>
-        )
-      } else {
-        return (
-          <TouchableOpacity onPress={this.startGame}>
-            <Text style={{ fontSize: 30, color: 'black', fontWeight: 'bold'}}> START GAME </Text>
-          </TouchableOpacity>
-        )
+      const initiator = this.props.players.filter(player => {
+        return this.props.game.initiator.id === player.id
+      })
+      if (initiator) {
+        if (this.props.players.length > 6) {
+          return (
+            <TouchableOpacity disabled={true} style={styles.startButton}>
+              <Text style={{ fontSize: 30, color: 'black', fontWeight: 'bold', opacity: 0.5}}> START GAME </Text>
+            </TouchableOpacity>
+          )
+        } else {
+          return (
+            <TouchableOpacity onPress={this.startGame} style={styles.startButton}>
+              <Text style={{ fontSize: 30, color: 'black', fontWeight: 'bold'}}> START GAME </Text>
+            </TouchableOpacity>
+          )
+        }
       }
     }
   }
+
+
 
   renderPlayers = () => {
     let currentPlayers = [];
@@ -83,7 +108,7 @@ class WaitingRoom extends Component {
               <Text style={{ fontSize: 42, color: 'red', fontWeight: '900', margin: '5%', width:'100%', height: '100%', textShadowColor: 'black', textShadowOffset: {width: 10, height: 10}, textShadowRadius: 8}}>{this.renderText()}</Text>
             </View>
 
-              <View style={styles.startButton}>
+              <View>
                 {this.renderButton()}
               </View>
 

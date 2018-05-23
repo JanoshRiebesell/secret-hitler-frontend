@@ -14,7 +14,6 @@ class PresidentVeto extends Component {
   }
 
   acceptVeto = () => {
-    console.log('I ACCEPT!', this.props);
     const { app, user } = this.props;
     this.props.socketEvent('givePresidentChanceToConfirmVeto', {playerId: user.id, gameId: app.gameId, veto:true});
   }
