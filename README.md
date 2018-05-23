@@ -1,9 +1,8 @@
 # Secret Hitler
-Mobile adaptation of the hidden identity party game 'Secret Hitler'.
+Frontend for the mobile adaptation of the hidden identity party game 'Secret Hitler'.
+For more information about the boardgame, check out the website http://secrethitler.com/.
 
-Frontend created in React Native and Redux using the CRNA structure.
-
-The project is still in development.
+This project is still in development.
 
 ## Table of Contents
 
@@ -59,7 +58,7 @@ Let the betrayal begin!
 The game is still in development and will shortly introduce new features and allow players to partake in a unique party game experience.
 
 ## Built with
-
+React Native, Redux and Socket iO to handle real-time communication.
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 
 
